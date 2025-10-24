@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CloudWay | Contact</title>
+    <link rel="icon" href="media/logo-fav-icon.jpeg.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+        section {
+          padding: 40px 15px;
+        }
+        #tags {
+          display: none;
+        .partner-box {
+        padding: 20px 40px;
+      }
+      .partner-box img {
+        height: 35px;
+      }
+    }
+  }
+   
+    </style>
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+
+      /* Header placeholder (like screenshot top bar) */
+      header {
+        background: #5a5a5a;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      /* Info Boxes */
+      .info-section {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        background: #fff;
+        padding: 50px 0;
+        gap: 20px;
+      }
+
+      .info-box {
+        background-color: #1d1656;
+        color: white;
+        width: 300px;
+        text-align: center;
+        padding: 40px 20px;
+        border-radius: 5px;
+      }
+
+      .info-box i {
+        font-size: 50px;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .info-box h3 {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+
+      .info-box p {
+        margin: 5px 0;
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+      /* Contact Form + Map */
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 40px 10%;
+        gap: 30px;
+      }
+
+      form {
+        flex: 1 1 45%;
+      }
+
+      form h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: #1d1656;
+      }
+
+      .form-group {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        font-size: 14px;
+        background: #fafafa;
+        outline: none;
+      }
+
+      textarea {
+        height: 120px;
+        resize: none;
+      }
+
+      button {
+        background-color: #1d1656;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 25px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #2c2396;
+      }
+
+      /* Map */
+      .map {
+        flex: 1 1 45%;
+      }
+
+      iframe {
+        width: 100%;
+        height: 350px;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      @media (max-width: 900px) {
+        .info-section {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .contact-container {
+          flex-direction: column;
+        }
+
+        form,
+        .map {
+          width: 100%;
+        }
+      }
+    </style>
+      <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lato', Arial, sans-serif;
+      background: #fff;
+      color: #1e1b55;
+    }
+    .three-columns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 72px;
+      margin: 34px 0 0 0;
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 440px;
+      margin-bottom: 40px;
+    }
+    .column img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      margin-bottom: 32px;
+    }
+    .column-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: 580;
+    }
+    .column-text {
+      color: #787878;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+      max-width: 410px;
+      line-height: 1.5;
+    }
+    @media only screen and (max-width: 1400px) {
+      .three-columns {
+        gap: 32px;
+      }
+      .column img {
+        width: 320px;
+        height: 320px;
+      }
+      .column {
+        width: 320px;
+      }
+    }
+    @media only screen and (max-width: 1000px) {
+      .three-columns {
+        flex-direction: column;
+        align-items: center;
+      }
+      .column {
+        width: 90vw;
+        margin-bottom: 36px;
+      }
+      .column img {
+        width: 80vw;
+        height: 80vw;
+        max-width: 340px;
+        max-height: 340px;
+      }
+    }
+  </style>
+  <style>
+  /* Navbar */
+  nav {
+    background: #0b0742;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+  }
+
+  nav .brand {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  nav button {
+    background: white;
+    color: #0b0742;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  nav button:hover {
+    background: #f1f1f1;
+  }
+
+  /* Popup Overlay */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Popup Box */
+  .popup-box {
+    background: #1a1452;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .popup-box h2 {
+    margin-top: 0;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 22px;
+  }
+
+  .popup-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .popup-box input, .popup-box textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .popup-box textarea {
+    resize: vertical;
+  }
+
+  .popup-box button.submit-btn {
+    background: white;
+    color: #1a1452;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .popup-box button.submit-btn:hover {
+    background: #f3f3f3;
+  }
+</style>
+<link rel="stylesheet" href="buttons.css">
+  </head>
+  <body>
+    <div class="social-buttons-container">
+    <a class="social-button whatsapp-bg" href="https://wa.me/918590050875" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <img src="media/whatsapp-logo.svg" alt="WhatsApp Chat" style="width: 50px; height: 50px">
+    </a>
+    <a class="social-button facebook-bg" href="https://www.facebook.com/share/1ZcFUfA3zd/" target="_blank" rel="noopener" aria-label="Share on Facebook">
+      <img src="media/fb-logo.png" alt="Facebook Share" style="width: 50px; height: 50px">
+    </a>
+  </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0; background-color: #1e1b55; z-index: 1000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="media/cl-lg.png" src="media/cloudway.png" alt="CloudWay"
+        /><img src="media/cloudway.png" alt="CloudWay"
+        />
+       </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Packages
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="south-packages.html"
+                    >South Indian Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="north-packages.html"
+                    >North Indian Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="international-packages.html"
+                    >International Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="all-packages.html">View all Packages</a>
+                </li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active" href="#">Services</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <!-- <button id="openPopup">Enquire Now</button> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <video autoplay muted loop>
+        <source
+          src="media/contact-video.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="hero-content container">
+        <img src="media/cloudwaylogo.png" width="280" alt="CloudWay" id="fade-up" />
+        <h1 class="mt-3" style="font-size: 70px;">CONTACT</h1>
+        <p>Discover the Best Places to Stay, Dine, Shop & Explore</p>
+         <button id="exBtn" onclick="location.href='all-packages.html'">Explore Now</button>
+      </div>
+    </section>
+
+    <section class="tags-section text-center py-4" id="tags">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 ">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-tree p-1"></i> Adventure travel </p>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-crown p-1"></i> Luxury travel</p>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-piggy-bank p-1"></i> Budget travel </p>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-prescription-bottle-alt p-1"></i></i> Travel essentials </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+      <div class="info-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Address</h3>
+        <p>
+          CloudWay Travel And Tourism Pvt Ltd<br />
+          Abc complex, Door No: 123/D,<br />
+          Opposite KSRTC Bust Stand,<br />
+          Calicut, Pin-693369
+        </p>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-envelope"></i>
+        <h3>Contact</h3>
+        <p>info@cloudway.com</p>
+        <p>0477-2260123</p>
+        <p>+91 1234567890</p>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-clock"></i>
+        <h3>Office Time</h3>
+        <p>Mon – Sat — 9:30 am – 5:30 pm</p>
+        <p>Sun – Closed</p>
+      </div>
+    </section>
+
+    <!-- Contact Form + Map -->
+    <div class="contact-container">
+      <form id="contact-form">
+  <h2>Get In Touch</h2>
+
+  <div class="form-group">
+    <input type="text" name="user_name" placeholder="Your Name" required />
+    <input type="email" name="user_email" placeholder="E-mail" required />
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="user_phone" placeholder="Phone Number" required />
+    <input type="text" name="user_subject" placeholder="Subject" />
+  </div>
+
+  <textarea name="message" placeholder="Write Your Message" required></textarea>
+
+  <br /><br />
+  <button type="submit">Send Now</button>
+</form>
+
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.036666252284!2d75.77876647458066!3d11.258713050113684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b2db706f6c3%3A0x88e33c099158e5f6!2sTECHOLAS%20TECHNOLOGIES%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1760968712864!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-box">
+        <button class="close-btn" id="closePopup" >X</button>
+        <h2>Enquire Now</h2>
+
+        <form>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="E-Mail" required />
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <input type="tel" placeholder="Phone Number" required />
+            <input type="number" placeholder="No of Days" required />
+          </div>
+          <textarea
+            rows="4"
+            placeholder="Write a message to indicate the number of people travelling with you and submit more details about your request including destinations and activities you may want in your holiday"
+            required
+          ></textarea>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    
+
+
+    <script>
+      const popup = document.getElementById("popup");
+      const openBtn = document.getElementById("openPopup");
+      const closeBtn = document.getElementById("closePopup");
+
+      openBtn.addEventListener("click", () => {
+        popup.style.display = "flex";
+      });
+
+      closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+
+      // Optional: close when clicking outside the box
+      window.addEventListener("click", (e) => {
+        if (e.target === popup) popup.style.display = "none";
+      });
+
+      // Add event listener to all Book Now buttons to open the popup
+      const bookNowBtns = document.querySelectorAll(".book-now-btn");
+      bookNowBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          popup.style.display = "flex";
+        });
+      });
+    </script>
+    <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("AIg861qM5rWiK8Vd7"); // 🔹  EmailJS public key
+  })();
+
+  const form = document.querySelector(".popup-box form");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: form.querySelector('input[placeholder="Name"]').value,
+      from_email: form.querySelector('input[placeholder="E-Mail"]').value,
+      from_phone: form.querySelector('input[placeholder="Phone Number"]').value,
+      no_of_days: form.querySelector('input[placeholder="No of Days"]').value,
+      message: form.querySelector("textarea").value,
+    };
+
+    emailjs
+      .send("service_x1z7xwd", "template_rqfu1lr", templateParams)
+      .then(
+        function(response) {
+          alert("✅ Enquiry submitted successfully!");
+          form.reset();
+          document.getElementById("popup").style.display = "none";
+        },
+        function(error) {
+          alert("❌ Failed to send enquiry. Please try again later.");
+          console.error("EmailJS Error:", error);
+        }
+      );
+  });
+</script>
+<!-- <script>
+  function showPopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "flex";
+
+  // Restart animation (optional, ensures replay on each open)
+  const box = popup.querySelector(".popup-box");
+  box.style.animation = "none";
+  void box.offsetWidth; // trigger reflow
+  box.style.animation = "popupZoom 0.4s ease forwards";
+}
+</script>
+<script>
+  openBtn.addEventListener("click", showPopup);
+
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+// Auto open after 3 seconds
+window.addEventListener("load", () => {
+  setTimeout(showPopup, 2000);
+});
+</script> -->
+
+    <!-- Footer -->
+    <footer style="margin-top: 50px; background-color: #1e1b55;" class="text-center py-4">
+      <p style="color: #fff;">© 2025 CloudWay. All Rights Reserved.</p>
+      <p class="small text mb-0" style="color: #fff;">
+         123, Abc Complex, Calicut | +91 1234567890 | info@cloudway.com
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Include EmailJS SDK  -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <!-- Your JavaScript code to handle form submission -->
+    <script>
+      (function () {
+        emailjs.init("AIg861qM5rWiK8Vd7"); // public key
+      })();
+
+      // Function to handle form submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Send the form data using EmailJS
+          emailjs.sendForm("service_x1z7xwd", "template_lqd8vke", this).then(  // service ID and template ID
+            function () {
+              alert("Message sent successfully!");
+            },
+            function (error) {
+              alert("Failed to send message. Please try again.");
+            }
+          );
+        });
+    </script>
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="social-button to-top-bg"
+      aria-label="Scroll to top"
+      title="Back to top"
+    >
+      ▲
+    </button>
+
+    <!-- Inline JavaScript for Scroll to Top -->
+    <script>
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 250) {
+          scrollToTopBtn.style.display = "flex";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      });
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

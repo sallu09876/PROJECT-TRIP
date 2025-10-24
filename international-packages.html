@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CloudWay | International Tour Packages</title>
+    <link rel="icon" href="media/cl-lg.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+        section {
+          padding: 40px 15px;
+        }
+        #tags {
+          display: none;
+        .partner-box {
+        padding: 20px 40px;
+      }
+      .partner-box img {
+        height: 35px;
+      }
+    }
+  }
+   
+    </style>
+    <style>
+      /* Navbar */
+      nav {
+        background: #0b0742;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+      }
+
+
+      nav .brand {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+
+      nav button {
+        background: white;
+        color: #0b0742;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+
+      nav button:hover {
+        background: #f1f1f1;
+      }
+
+
+      /* Popup Overlay */
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      /* Popup Box */
+      .popup-box {
+        background: #1a1452;
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+      }
+
+
+      .popup-box h2 {
+        margin-top: 0;
+      }
+
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: 3px;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 22px;
+      }
+
+
+      .popup-box form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+
+      .popup-box input,
+      .popup-box textarea {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 100%;
+      }
+
+
+      .popup-box textarea {
+        resize: vertical;
+      }
+
+
+      .popup-box button.submit-btn {
+        background: white;
+        color: #1a1452;
+        border: none;
+        border-radius: 25px;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+
+      .popup-box button.submit-btn:hover {
+        background: #f3f3f3;
+      }
+    </style>
+    <link rel="stylesheet" href="buttons.css">
+  </head>
+  <body>
+    <div class="social-buttons-container">
+    <a class="social-button whatsapp-bg" href="https://wa.me/918590050875" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <img src="media/whatsapp-logo.svg" alt="WhatsApp Chat" style="width: 50px; height: 50px">
+    </a>
+    <a class="social-button facebook-bg" href="https://www.facebook.com/share/1ZcFUfA3zd/" target="_blank" rel="noopener" aria-label="Share on Facebook">
+      <img src="media/fb-logo.png" alt="Facebook Share" style="width: 50px; height: 50px">
+    </a>
+  </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0; background-color: #1e1b55; z-index: 1000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="media/cl-lg.png" src="media/cloudway.png" alt="CloudWay"
+        /><img src="media/cloudway.png" alt="CloudWay"
+        />
+       </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Packages
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="south-packages.html"
+                    >South Indian Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="north-packages.html"
+                    >North Indian Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="international-packages.html"
+                    >International Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="all-packages.html">View all Packages</a>
+                </li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active" href="#">Services</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <button id="openPopup">Enquire Now</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <video autoplay muted loop>
+        <source
+          src="media/packages-video.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="hero-content container">
+        <img src="media/cloudwaylogo.png" width="280" alt="CocoMyst" id="fade-up" />
+        <h1 class="mt-3" style="color: #fff; ">INTERNATIONAL TOUR PACKAGES</h1>
+        <p style="color: #fff;">Discover the Best Places to Stay, Dine, Shop & Explore</p>
+         <button id="exBtn" onclick="location.href='all-packages.html'">Explore Now</button>
+      </div>
+    </section>
+
+    <section class="tags-section text-center py-4" id="tags">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 ">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-tree p-1"></i> Adventure travel </p>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-crown p-1"></i> Luxury travel</p>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-piggy-bank p-1"></i> Budget travel </p>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <p class="tab-head"><i class="fas fa-prescription-bottle-alt p-1"></i></i> Travel essentials </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- International Tour Packages -->
+<section class="py-5" style="background-color:#fafafa;">
+  <div class="container text-center">
+    <p class="text-muted mb-1">Journey of a life-time</p>
+    <h2 class="fw-bold mb-5" style="font-size:2rem; font-family:'Poppins',sans-serif;">
+      INTERNATIONAL TOUR PACKAGES
+    </h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1748665331_683a83f3e5964.webp" class="card-img-top" alt="Singapore Getaway">
+          <div class="card-body">
+            <h6 class="fw-bold">Singapore Getaway</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">2 Pax : ₹35,500 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1746263250_azerbaijian.png" class="card-img-top" alt="Azerbaijan Tour">
+          <div class="card-body">
+            <h6 class="fw-bold">Azerbaijan Tour with Baku</h6>
+            <p class="text-muted mb-1">5 Days 4 Nights</p>
+            <p class="small mb-2">2 Pax : ₹30,500 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1757581484_68c290ac4fd98.webp" class="card-img-top" alt="Vietnam Danang">
+          <div class="card-body">
+            <h6 class="fw-bold">Vietnam - Danang</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹23,996 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1747213452_68245c8c75a4e.webp" class="card-img-top" alt="Sri Lanka Tour">
+          <div class="card-body">
+            <h6 class="fw-bold">Sri Lanka tour Package</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">2 Pax : ₹24,500 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1744287879_international33.png" class="card-img-top" alt="Thailand Couple">
+          <div class="card-body">
+            <h6 class="fw-bold">Thailand Couple Package</h6>
+            <p class="text-muted mb-1">5 Days 4 Nights</p>
+            <p class="small mb-2">2 Pax : ₹22,900 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1759146397_68da719db4cea.webp" class="card-img-top" alt="Magical Malaysia">
+          <div class="card-body">
+            <h6 class="fw-bold">Magical Malaysia</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">2 Pax : ₹19,500 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1744287548_international22.png" class="card-img-top" alt="Bali Getaway">
+          <div class="card-body">
+            <h6 class="fw-bold">Exotic Bali Getaway</h6>
+            <p class="text-muted mb-1">5 Days 4 Nights</p>
+            <p class="small mb-2">2 Pax : ₹21,900 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1746791784_681ded68958b2.webp" class="card-img-top" alt="Maldives Joy Island">
+          <div class="card-body">
+            <h6 class="fw-bold">Maldives - Joy Island</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹1,69,500 Onwards/2 Adults</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1746430540_hon.png" class="card-img-top" alt="Vibrant Vietnam">
+          <div class="card-body">
+            <h6 class="fw-bold">Vibrant Pulse of Vietnam</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">2 Pax : ₹23,900 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1747137393_682333712379f.webp" class="card-img-top" alt="Maldives Thulhagiri">
+          <div class="card-body">
+            <h6 class="fw-bold">Maldives-Thulhagiri Island</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹1,23,000 Onwards/Adult</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 11 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1747199981_682427ed63f5a.webp" class="card-img-top" alt="Maldives Kandooma Resort">
+          <div class="card-body">
+            <h6 class="fw-bold">Maldives Kandooma Resort</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹1,19,900 Onwards/Adults</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 12 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1746273439_vite.png" class="card-img-top" alt="Vietnam Awaits">
+          <div class="card-body">
+            <h6 class="fw-bold">Vietnam Awaits</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹25,000 Onwards/Adult</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 13 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1757575001_68c27759bb6dc.webp" class="card-img-top" alt="Thailand Tour">
+          <div class="card-body">
+            <h6 class="fw-bold">Thailand Tour Package</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹26,530 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 14 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1747203575_682435f74b581.webp" class="card-img-top" alt="Dubai Abu Dhabi Tour">
+          <div class="card-body">
+            <h6 class="fw-bold">Dubai Abu Dhabi Tour</h6>
+            <p class="text-muted mb-1">5 Days 4 Nights</p>
+            <p class="small mb-2">2 Pax : ₹42,900 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 15 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1746423854_danag.png" class="card-img-top" alt="Vietnam Twin City">
+          <div class="card-body">
+            <h6 class="fw-bold">Vietnam: Twin City Tour</h6>
+            <p class="text-muted mb-1">6 Days 5 Nights</p>
+            <p class="small mb-2">2 Pax : ₹36,800 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 16 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1747202075_6824301bd9424.webp" class="card-img-top" alt="Maldives Medhufushi">
+          <div class="card-body">
+            <h6 class="fw-bold">Maldives Medhufushi Island</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹1,37,600 Onwards/Adults</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 17 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1757571977_68c26b8907cc4.webp" class="card-img-top" alt="Kazakhstan Tour">
+          <div class="card-body">
+            <h6 class="fw-bold">Kazakhstan Tour Package</h6>
+            <p class="text-muted mb-1">5 Days 4 Nights</p>
+            <p class="small mb-2">₹36,796 Onwards/Person</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- 18 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://www.cocomyst.com/storage/packages/1747135889_68232d917bb78.webp" class="card-img-top" alt="Maldives Water Villa">
+          <div class="card-body">
+            <h6 class="fw-bold">Maldives Water Villa</h6>
+            <p class="text-muted mb-1">4 Days 3 Nights</p>
+            <p class="small mb-2">₹1,09,000 Onwards/Couple</p>
+            <button class="btn btn-primary btn-sm book-now-btn" style="background-color:#1e1b55;border:none;">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Partners Section -->
+    <section class="partners-section text-center py-4">
+    <h2 style="font-size: 2rem; font-weight: bold; font-family: 'Poppins', sans-serif; color: #1e1b55;">Our Tour Partners</h2>
+    <p class="subtitle">
+      Trusted partners delivering exceptional travel experiences worldwide.
+    </p>
+
+    <div class="slider-wrapper">
+      <div class="partners-container">
+        <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/travava.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Katana.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Booking.com.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Jakmaen.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/bigui.png"></div><div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/travava.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Katana.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Booking.com.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Jakmaen.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/bigui.png"></div><div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/travava.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Katana.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Booking.com.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Jakmaen.png"></div>
+                                                <div class="item box"><img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/bigui.png"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Popup -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-box">
+        <button class="close-btn" id="closePopup">X</button>
+        <h2>Enquire Now</h2>
+
+        <form>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="E-Mail" required />
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <input type="tel" placeholder="Phone Number" required />
+            <input type="number" placeholder="No of Days" required />
+          </div>
+          <textarea
+            rows="4"
+            placeholder="Write a message to indicate the number of people travelling with you and submit more details about your request including destinations and activities you may want in your holiday"
+            required
+          ></textarea>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 50px; background-color: #1e1b55;" class="text-center py-4">
+      <p style="color: #fff;">© 2025 CloudWay. All Rights Reserved.</p>
+      <p class="small text mb-0" style="color: #fff;">
+         123, Abc Complex, Calicut | +91 1234567890 | info@cloudway.com
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const popup = document.getElementById("popup");
+      const openBtn = document.getElementById("openPopup");
+      const closeBtn = document.getElementById("closePopup");
+
+      openBtn.addEventListener("click", () => {
+        popup.style.display = "flex";
+      });
+
+      closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+
+      // Optional: close when clicking outside the box
+      window.addEventListener("click", (e) => {
+        if (e.target === popup) popup.style.display = "none";
+      });
+
+      // Add event listener to all Book Now buttons to open the popup
+      const bookNowBtns = document.querySelectorAll(".book-now-btn");
+      bookNowBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          popup.style.display = "flex";
+        });
+      });
+    </script>
+    <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("AIg861qM5rWiK8Vd7"); // 🔹  EmailJS public key
+  })();
+
+  const form = document.querySelector(".popup-box form");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: form.querySelector('input[placeholder="Name"]').value,
+      from_email: form.querySelector('input[placeholder="E-Mail"]').value,
+      from_phone: form.querySelector('input[placeholder="Phone Number"]').value,
+      no_of_days: form.querySelector('input[placeholder="No of Days"]').value,
+      message: form.querySelector("textarea").value,
+    };
+
+    emailjs
+      .send("service_x1z7xwd", "template_rqfu1lr", templateParams)
+      .then(
+        function(response) {
+          alert("✅ Enquiry submitted successfully!");
+          form.reset();
+          document.getElementById("popup").style.display = "none";
+        },
+        function(error) {
+          alert("❌ Failed to send enquiry. Please try again later.");
+          console.error("EmailJS Error:", error);
+        }
+      );
+  });
+</script>
+<!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="social-button to-top-bg"
+      aria-label="Scroll to top"
+      title="Back to top"
+    >
+      ▲
+    </button>
+
+    <!-- Inline JavaScript for Scroll to Top -->
+    <script>
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 250) {
+          scrollToTopBtn.style.display = "flex";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      });
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+<!-- <script>
+  function showPopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "flex";
+
+  // Restart animation (optional, ensures replay on each open)
+  const box = popup.querySelector(".popup-box");
+  box.style.animation = "none";
+  void box.offsetWidth; // trigger reflow
+  box.style.animation = "popupZoom 0.4s ease forwards";
+}
+</script>
+<script>
+  openBtn.addEventListener("click", showPopup);
+
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+// Auto open after 3 seconds
+window.addEventListener("load", () => {
+  setTimeout(showPopup, 2000);
+});
+</script> -->
+  </body>
+</html>

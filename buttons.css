@@ -1,0 +1,90 @@
+.social-buttons-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+.social-button {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s,
+    transform 0.22s cubic-bezier(0.21, 1.01, 0.62, 1.11),
+    box-shadow 0.22s cubic-bezier(0.21, 1.01, 0.62, 1.11);
+  will-change: transform;
+  font-size: 2rem;
+  color: #606060a3;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.social-button:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+    0 0 16px 3px rgba(32, 196, 70, 0.09);
+}
+.social-button img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.22s cubic-bezier(0.21, 1.01, 0.62, 1.11);
+}
+.social-button:hover img {
+  transform: scale(1.12) rotate(5deg);
+}
+.whatsapp-bg {
+  background-color: #25d366;
+}
+.whatsapp-bg:hover {
+  background-color: #1ebe5b;
+}
+.facebook-bg {
+  background-color: #1877f3;
+}
+.facebook-bg:hover {
+  background-color: #145db2;
+}
+.to-top-bg {
+  background-color: #606060a3;
+  color: #fff;
+}
+.to-top-bg:hover {
+  background-color: #000000d2;
+}
+#scrollToTopBtn {
+  position: fixed;
+  right: 700px;
+  bottom: 20px;
+  z-index: 1001;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .social-buttons-container {
+    gap: 10px;
+    bottom: 15px;
+    right: 15px;
+  }
+  .social-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  .social-button img {
+    width: 28px;
+    height: 28px;
+  }
+  #scrollToTopBtn {
+    right: 15px;
+    bottom: 15px;
+  }
+}

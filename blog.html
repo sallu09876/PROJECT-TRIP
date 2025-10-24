@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CloudWay | Blog</title>
+    <link rel="icon" href="media/cl-lg.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+
+    <style>
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+        section {
+          padding: 40px 15px;
+        }
+        #tags {
+          display: none;
+        }
+        .partner-box {
+          padding: 20px 40px;
+        }
+        .partner-box img {
+          height: 35px;
+        }
+      }
+    </style>
+    <style>
+      /* Navbar */
+      nav {
+        background: #0b0742;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+      }
+
+
+      nav .brand {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+
+      nav button {
+        background: white;
+        color: #0b0742;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+
+      nav button:hover {
+        background: #f1f1f1;
+      }
+
+
+      /* Popup Overlay */
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      /* Popup Box */
+      .popup-box {
+        background: #1a1452;
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+      }
+
+
+      .popup-box h2 {
+        margin-top: 0;
+      }
+
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: 3px;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 22px;
+      }
+
+
+      .popup-box form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+
+      .popup-box input,
+      .popup-box textarea {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 100%;
+      }
+
+
+      .popup-box textarea {
+        resize: vertical;
+      }
+
+
+      .popup-box button.submit-btn {
+        background: white;
+        color: #1a1452;
+        border: none;
+        border-radius: 25px;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+
+      .popup-box button.submit-btn:hover {
+        background: #f3f3f3;
+      }
+
+      #hv {
+        height: 300px;
+        object-fit: cover;
+      }
+      #hv:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    </style>
+    <link rel="stylesheet" href="buttons.css">
+  </head>
+  <body>
+    <div class="social-buttons-container">
+    <a class="social-button whatsapp-bg" href="https://wa.me/918590050875" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <img src="media/whatsapp-logo.svg" alt="WhatsApp Chat" style="width: 50px; height: 50px">
+    </a>
+    <a class="social-button facebook-bg" href="https://www.facebook.com/share/1ZcFUfA3zd/" target="_blank" rel="noopener" aria-label="Share on Facebook">
+      <img src="media/fb-logo.png" alt="Facebook Share" style="width: 50px; height: 50px">
+    </a>
+  </div>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="position: sticky; top: 0; background-color: #1e1b55; z-index: 1000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="media/cl-lg.png" src="media/cloudway.png" alt="CloudWay"
+        /><img src="media/cloudway.png" alt="CloudWay" />
+       </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Packages
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="south-packages.html"
+                    >South Indian Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="north-packages.html"
+                    >North Indian Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="international-packages.html"
+                    >International Tour Packages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="all-packages.html">View all Packages</a>
+                </li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active" href="#">Services</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <button id="openPopup">Enquire Now</button>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <video autoplay muted loop>
+        <source src="media/packages-video.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-content container">
+        <img src="media/cloudwaylogo.png" width="280" alt="CocoMyst" id="fade-up" />
+        <h1 class="mt-3" style="color: #fff">NORTH INDIAN TOUR PACKAGES</h1>
+        <p style="color: #fff">Discover the Best Places to Stay, Dine, Shop & Explore</p>
+        <button id="exBtn" onclick="location.href='all-packages.html'">Explore Now</button>
+      </div>
+    </section>
+
+
+    <section class="tags-section text-center py-4" id="tags">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 ">
+            <a href="#" class="text-decoration-none">
+              <p class="tab-head"><i class="fas fa-tree p-1"></i> Adventure travel </p>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#" class="text-decoration-none">
+              <p class="tab-head"><i class="fas fa-crown p-1"></i> Luxury travel</p>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#" class="text-decoration-none">
+              <p class="tab-head"><i class="fas fa-piggy-bank p-1"></i> Budget travel </p>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#" class="text-decoration-none">
+              <p class="tab-head"><i class="fas fa-prescription-bottle-alt p-1"></i></i> Travel essentials </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="text-center" style="margin-top: 50px">
+      <div class="container">
+        <h2 class="section-title">Recent Blog Posts</h2>
+        <div class="row g-4">
+          <div class="col-md-4 col-12">
+            <div class="card border-0 shadow-sm">
+              <img
+                src="https://www.cocomyst.com/storage/blogs/1759924782_68e6522e8b7c7.webp"
+                class="card-img-top"
+                alt=""
+                id="hv"
+              />
+              <div class="card-body">
+                <h6>Top Things to Do in Bali</h6>
+                <p class="small text-muted">
+                  Discover hidden gems for first-time travelers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="card border-0 shadow-sm">
+              <img
+                src="https://www.cocomyst.com/storage/blogs/1759317222_68dd0ce60426c.webp"
+                class="card-img-top"
+                alt=""
+                id="hv"
+              />
+              <div class="card-body">
+                <h6>Save on Kochi–Munnar Packages</h6>
+                <p class="small text-muted">
+                  Tips to enjoy Kerala’s beauty affordably.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="card border-0 shadow-sm">
+              <img
+                src="https://www.cocomyst.com/storage/blogs/1759231564_68dbbe4c5508a.webp"
+                class="card-img-top"
+                alt=""
+                id="hv"
+              />
+              <div class="card-body">
+                <h6>Sambranikodi Island Guide</h6>
+                <p class="small text-muted">
+                  Explore Kerala’s untouched island getaway.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section text-center py-4">
+      <h2 style="font-size: 2rem; font-weight: bold; font-family: 'Poppins', sans-serif; color: #1e1b55;">
+        Our Tour Partners
+      </h2>
+      <p class="subtitle">
+        Trusted partners delivering exceptional travel experiences worldwide.
+      </p>
+
+      <div class="slider-wrapper">
+        <div class="partners-container">
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/travava.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Katana.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Booking.com.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Jakmaen.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/bigui.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/travava.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Katana.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Booking.com.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Jakmaen.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/bigui.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/travava.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Katana.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Booking.com.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/Jakmaen.png" />
+          </div>
+          <div class="item box">
+            <img alt="client logo" class="client-img" src="https://www.cocomyst.com/storage/partners/bigui.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-box">
+        <button class="close-btn" id="closePopup">X</button>
+        <h2>Enquire Now</h2>
+
+        <form>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="E-Mail" required />
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <input type="tel" placeholder="Phone Number" required />
+            <input type="number" placeholder="No of Days" required />
+          </div>
+          <textarea
+            rows="4"
+            placeholder="Write a message to indicate the number of people travelling with you and submit more details about your request including destinations and activities you may want in your holiday"
+            required
+          ></textarea>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 50px; background-color: #1e1b55;" class="text-center py-4">
+      <p style="color: #fff">© 2025 CloudWay. All Rights Reserved.</p>
+      <p class="small text mb-0" style="color: #fff">
+        123, Abc Complex, Calicut | +91 1234567890 | <a href="mailto:info@cloudway.com">info@cloudway.com</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+      const popup = document.getElementById("popup");
+      const openBtn = document.getElementById("openPopup");
+      const closeBtn = document.getElementById("closePopup");
+
+      openBtn.addEventListener("click", () => {
+        popup.style.display = "flex";
+      });
+
+      closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+
+      // Optional: close when clicking outside the box
+      window.addEventListener("click", (e) => {
+        if (e.target === popup) popup.style.display = "none";
+      });
+
+      // Add event listener to all Book Now buttons to open the popup
+      const bookNowBtns = document.querySelectorAll(".book-now-btn");
+      bookNowBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          popup.style.display = "flex";
+        });
+      });
+    </script>
+    <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("AIg861qM5rWiK8Vd7"); // 🔹  EmailJS public key
+  })();
+
+  const form = document.querySelector(".popup-box form");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: form.querySelector('input[placeholder="Name"]').value,
+      from_email: form.querySelector('input[placeholder="E-Mail"]').value,
+      from_phone: form.querySelector('input[placeholder="Phone Number"]').value,
+      no_of_days: form.querySelector('input[placeholder="No of Days"]').value,
+      message: form.querySelector("textarea").value,
+    };
+
+    emailjs
+      .send("service_x1z7xwd", "template_rqfu1lr", templateParams)
+      .then(
+        function(response) {
+          alert("✅ Enquiry submitted successfully!");
+          form.reset();
+          document.getElementById("popup").style.display = "none";
+        },
+        function(error) {
+          alert("❌ Failed to send enquiry. Please try again later.");
+          console.error("EmailJS Error:", error);
+        }
+      );
+  });
+</script>
+<!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="social-button to-top-bg"
+      aria-label="Scroll to top"
+      title="Back to top"
+    >
+      ▲
+    </button>
+
+    <!-- Inline JavaScript for Scroll to Top -->
+    <script>
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 250) {
+          scrollToTopBtn.style.display = "flex";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      });
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+<!-- <script>
+  function showPopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "flex";
+
+  // Restart animation (optional, ensures replay on each open)
+  const box = popup.querySelector(".popup-box");
+  box.style.animation = "none";
+  void box.offsetWidth; // trigger reflow
+  box.style.animation = "popupZoom 0.4s ease forwards";
+}
+</script>
+<script>
+  openBtn.addEventListener("click", showPopup);
+
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+// Auto open after 3 seconds
+window.addEventListener("load", () => {
+  setTimeout(showPopup, 2000);
+});
+</script> -->
+  </body>
+</html>
