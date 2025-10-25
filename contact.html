@@ -722,5 +722,115 @@ window.addEventListener("load", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     </script>
-  </body>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("contact-form");
+  const inputs = form.querySelectorAll("input, textarea");
+
+  // Create hint and error message elements dynamically
+  inputs.forEach(input => {
+    const hint = document.createElement("small");
+    hint.className = "form-hint text-secondary";
+    hint.style.display = "none";
+    input.insertAdjacentElement("afterend", hint);
+
+    const error = document.createElement("small");
+    error.className = "error-msg text-danger";
+    error.style.display = "none";
+    input.insertAdjacentElement("afterend", error);
+
+    input.addEventListener("focus", () => {
+      hint.style.display = "block";
+      error.style.display = "none";
+      hint.textContent = getHint(input.name);
+    });
+
+    input.addEventListener("blur", () => {
+      hint.style.display = "none";
+      validateField(input);
+    });
+  });
+
+  function getHint(name) {
+    switch (name) {
+      case "user_name": return "Enter only letters (A-Z or a-z).";
+      case "user_email": return "Enter a valid Gmail address (e.g., example@gmail.com).";
+      case "user_phone": return "Enter a 10-digit phone number.";
+      case "user_subject": return "Optional field. You can write anything here.";
+      case "message": return "Message is required. Please describe your query.";
+      default: return "";
+    }
+  }
+
+  function validateField(input) {
+    const value = input.value.trim();
+    const error = input.nextElementSibling; // first small is hint, second is error
+    const hint = error.previousElementSibling;
+    let valid = true;
+    let message = "";
+
+    switch (input.name) {
+      case "user_name":
+        if (!/^[A-Za-z ]+$/.test(value)) {
+          valid = false;
+          message = "Name must contain only letters and spaces.";
+        }
+        break;
+      case "user_email":
+        if (!/^[A-Za-z0-9._%+-]+@gmail\.com$/.test(value)) {
+          valid = false;
+          message = "Enter a valid Gmail address.";
+        }
+        break;
+      case "user_phone":
+        if (!/^\d{10}$/.test(value)) {
+          valid = false;
+          message = "Phone number must be exactly 10 digits.";
+        }
+        break;
+      case "message":
+        if (value === "") {
+          valid = false;
+          message = "Message cannot be empty.";
+        }
+        break;
+    }
+
+    if (!valid) {
+      error.textContent = message;
+      error.style.display = "block";
+    } else {
+      error.style.display = "none";
+    }
+    return valid;
+  }
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let isValid = true;
+    inputs.forEach(input => {
+      if (!validateField(input)) isValid = false;
+    });
+
+    if (!isValid) {
+      alert("Please correct the errors before submitting.");
+      return;
+    }
+
+    // Proceed only if validation passed
+    emailjs.sendForm("service_x1z7xwd", "template_lqd8vke", this)
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      })
+      .catch(() => {
+        alert("❌ Failed to send message. Please try again later.");
+      });
+  });
+});
+</script>
+
+</body>
 </html>

@@ -743,5 +743,127 @@ window.addEventListener("load", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     </script>
-  </body>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("enq-form");
+  const inputs = form.querySelectorAll("input, textarea");
+
+  inputs.forEach(input => {
+    const hint = document.createElement("small");
+    hint.className = "form-hint text-light";
+    hint.style.display = "none";
+    input.insertAdjacentElement("afterend", hint);
+
+    const error = document.createElement("small");
+    error.className = "error-msg text-danger";
+    error.style.display = "none";
+    input.insertAdjacentElement("afterend", error);
+
+    input.addEventListener("focus", () => {
+      hint.style.display = "block";
+      error.style.display = "none";
+      hint.textContent = getHint(input.placeholder);
+    });
+
+    input.addEventListener("blur", () => {
+      hint.style.display = "none";
+      validateField(input);
+    });
+  });
+
+  function getHint(placeholder) {
+    switch (placeholder) {
+      case "Name": return "Enter only letters (A-Z or a-z).";
+      case "E-Mail": return "Enter a valid Gmail address (e.g., example@gmail.com).";
+      case "Phone Number": return "Enter a 10-digit phone number.";
+      case "No of Days": return "Enter number of travel days.";
+      default: return "Message is required.";
+    }
+  }
+
+  function validateField(input) {
+    const value = input.value.trim();
+    const error = input.nextElementSibling; // error <small>
+    const hint = error.previousElementSibling;
+    let valid = true;
+    let message = "";
+
+    switch (input.placeholder) {
+      case "Name":
+        if (!/^[A-Za-z ]+$/.test(value)) {
+          valid = false;
+          message = "Name must contain only letters and spaces.";
+        }
+        break;
+      case "E-Mail":
+        if (!/^[A-Za-z0-9._%+-]+@gmail\.com$/.test(value)) {
+          valid = false;
+          message = "Enter a valid Gmail address.";
+        }
+        break;
+      case "Phone Number":
+        if (!/^\d{10}$/.test(value)) {
+          valid = false;
+          message = "Phone number must be exactly 10 digits.";
+        }
+        break;
+      case "No of Days":
+        if (value === "" || value <= 0) {
+          valid = false;
+          message = "Please enter a valid number of days.";
+        }
+        break;
+      default:
+        if (value === "") {
+          valid = false;
+          message = "Message cannot be empty.";
+        }
+    }
+
+    if (!valid) {
+      error.textContent = message;
+      error.style.display = "block";
+    } else {
+      error.style.display = "none";
+    }
+    return valid;
+  }
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let isValid = true;
+    inputs.forEach(input => {
+      if (!validateField(input)) isValid = false;
+    });
+
+    if (!isValid) {
+      alert("Please correct the errors before submitting.");
+      return;
+    }
+
+    // Proceed only if validation passed
+    const templateParams = {
+      from_name: form.querySelector('input[placeholder="Name"]').value,
+      from_email: form.querySelector('input[placeholder="E-Mail"]').value,
+      from_phone: form.querySelector('input[placeholder="Phone Number"]').value,
+      no_of_days: form.querySelector('input[placeholder="No of Days"]').value,
+      message: form.querySelector("textarea").value,
+    };
+
+    emailjs.send("service_x1z7xwd", "template_rqfu1lr", templateParams)
+      .then(() => {
+        alert("✅ Enquiry submitted successfully!");
+        form.reset();
+        document.getElementById("popup").style.display = "none";
+      })
+      .catch(() => {
+        alert("❌ Failed to send enquiry. Please try again later.");
+      });
+  });
+});
+</script>
+
+</body>
 </html>
